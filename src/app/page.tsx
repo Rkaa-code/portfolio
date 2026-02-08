@@ -60,9 +60,8 @@ export default function Home() {
         >
           <h1 className="text-4xl font-bold mb-4">Halo, saya Raka 👋</h1>
           <p className="text-gray-400 leading-relaxed max-w-3xl">
-            Saya pelajar yang tertarik pada dunia Web Development. 
-            Fokus saya saat ini adalah membangun website modern yang rapi,
-            responsif, dan mudah digunakan.
+            Saya pelajar yang tertarik pada dunia Backend Development.
+Fokus saya saat ini adalah membangun sistem backend yang terstruktur, efisien, dan mudah dikembangkan, termasuk pengelolaan database, autentikasi, dan API.
           </p>
         </section>
 
@@ -150,7 +149,8 @@ export default function Home() {
               <CardContent>
                 <h3 className="font-semibold mb-2">Backend Dasar</h3>
                 <p className="text-gray-400">
-                  CRUD sederhana menggunakan PHP & MySQL.
+                  Backend Developer yang fokus pada pembuatan sistem yang efisien, aman, dan mudah dikembangkan.
+Menguasai Laravel, Supabase, manajemen database dengan HeidiSQL, serta backend logic di Next.js.
                 </p>
               </CardContent>
             </Card>
@@ -178,15 +178,6 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="bg-zinc-900 border-zinc-700 hover:border-zinc-500 transition">
-              <CardContent>
-                <h3 className="font-semibold mb-2">Aplikasi CRUD</h3>
-                <p className="text-gray-400 mb-4">
-                  Aplikasi pengelolaan data sederhana dengan PHP & MySQL.
-                </p>
-                <Button variant="secondary">Lihat</Button>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
@@ -205,13 +196,7 @@ export default function Home() {
               </Button>
             </Link>
 
-            <Link href="https://linkedin.com/in/USERNAME_KAMU" target="_blank">
-              <Button size="icon" variant="outline" className="h-14 w-14">
-                <Linkedin />
-              </Button>
-            </Link>
-
-            <Link href="mailto:mp8359620@gmail.com">
+            <Link href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfrLZgpnlscmsSZzmxlwhjJPnChDWJsbHdRSRBCSbvCmxRPRGsGFQQsCQSNgVCXthcQwkL" target="_blank">
               <Button size="icon" variant="outline" className="h-14 w-14">
                 <Mail />
               </Button>
