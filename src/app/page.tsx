@@ -12,6 +12,7 @@ import {
   Atom,
   Database,
   Layers,
+  Phone, 
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -39,6 +40,36 @@ function useReveal() {
 
   return { ref, show };
 }
+const techStack = [
+  { name: "HTML", icon: <Code2 className="h-8 w-8 text-orange-400" /> },
+  { name: "CSS", icon: <Braces className="h-8 w-8 text-blue-400" /> },
+  { name: "JavaScript", icon: <FileCode2 className="h-8 w-8 text-yellow-400" /> },
+  {
+    name: "Laravel",
+    icon: <Image src="/icons/laravelIcon.png" alt="Laravel" width={32} height={32} />,
+  },
+  {
+    name: "Next.js",
+    icon: <Image src="/icons/nextjs.webp" alt="Next.js" width={32} height={32} />,
+  },
+  { name: "MySQL", icon: <Database className="h-8 w-8 text-emerald-400" /> },
+  {
+    name: "Supabase",
+    icon: <Image src="/icons/supabase.png" alt="Supabase" width={32} height={32} />,
+  },
+  {
+    name: "Tailwind",
+    icon: (
+      <Image
+        src="/icons/tailwind-css-icon.webp"
+        alt="Tailwind"
+        width={32}
+        height={32}
+      />
+    ),
+  },
+];
+
 
 export default function Home() {
   const about = useReveal();
@@ -51,19 +82,60 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-gray-100 px-6 py-20">
       <section className="max-w-5xl mx-auto space-y-28">
 
-        {/* ===== ABOUT ===== */}
-        <section
-          ref={about.ref}
-          className={`transition-all duration-700 ${
-            about.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h1 className="text-4xl font-bold mb-4">Halo, saya Raka 👋</h1>
-          <p className="text-gray-400 leading-relaxed max-w-3xl">
-            Saya pelajar yang tertarik pada dunia Backend Development.
-Fokus saya saat ini adalah membangun sistem backend yang terstruktur, efisien, dan mudah dikembangkan, termasuk pengelolaan database, autentikasi, dan API.
-          </p>
-        </section>
+{/* ===== ABOUT ===== */}
+  <section
+    ref={about.ref}
+    className={`transition-all duration-700 ${
+      about.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+    } flex flex-col items-center text-center`}
+  >
+    {/* PROFILE IMAGE */}
+    <div className="relative w-40 h-40 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900 mb-6">
+      <Image
+        src="/profile.jpg"
+        alt="Foto Profil Raka"
+        fill
+        className="object-cover"
+        priority
+      />
+    </div>
+
+    {/* NAME */}
+    <h1 className="text-4xl font-bold mb-6">
+      Halo, saya Raka Aditya Putra
+    </h1>
+
+    {/* ABOUT ME CARD */}
+    <Card className="bg-zinc-900 border-zinc-700 max-w-3xl w-full text-left">
+      <CardContent className="pt-6 space-y-4">
+        <h2 className="text-xl font-semibold">About Me</h2>
+
+        <p className="text-gray-400 leading-relaxed">
+          Nama saya Raka Aditya Putra, saya siswa SMK kelas 2 yang sedang fokus
+          mendalami Backend Web Development. Saya tertarik membangun sistem
+          backend yang menjadi dasar sebuah aplikasi agar berjalan stabil,
+          rapi, dan mudah dikembangkan.
+        </p>
+
+        <p className="text-gray-400 leading-relaxed">
+          Saat ini saya menggunakan Laravel untuk menangani logika backend
+          seperti routing, autentikasi, dan pembuatan API. Untuk pengelolaan
+          database, saya terbiasa menggunakan Supabase serta HeidiSQL dalam
+          mengatur struktur tabel, relasi data, dan proses CRUD. Saya juga
+          masih mempelajari PostgreSQL untuk memperdalam pemahaman database.
+        </p>
+
+        <p className="text-gray-400 leading-relaxed">
+          Saya terbiasa membaca dokumentasi, mencoba implementasi langsung,
+          serta melakukan debugging sampai masalah terselesaikan. Dari proses
+          tersebut, saya belajar pentingnya backend yang terstruktur dan mudah
+          dipelihara.
+        </p>
+      </CardContent>
+    </Card>
+  </section>
+
+
 
         {/* ===== TECH STACK ===== */}
 <section
@@ -74,89 +146,53 @@ Fokus saya saat ini adalah membangun sistem backend yang terstruktur, efisien, d
 >
   <h2 className="text-2xl font-semibold mb-6">Tech Stack</h2>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-    <Card className="bg-zinc-900 border-zinc-700 text-center">
-  <CardContent className="flex flex-col items-center gap-3">
-    <Code2 className="h-8 w-8 text-orange-400" />
-    <p className="font-medium">HTML</p>
-  </CardContent>
-</Card>
-
-<Card className="bg-zinc-900 border-zinc-700 text-center">
-  <CardContent className="flex flex-col items-center gap-3">
-    <Braces className="h-8 w-8 text-blue-400" />
-    <p className="font-medium">CSS</p>
-  </CardContent>
-</Card>
-
-<Card className="bg-zinc-900 border-zinc-700 text-center">
-  <CardContent className="flex flex-col items-center gap-3">
-    <FileCode2 className="h-8 w-8 text-yellow-400" />
-    <p className="font-medium">JavaScript</p>
-  </CardContent>
-</Card>
-
-<Card className="bg-zinc-900 border-zinc-700 text-center">
-  <CardContent className="flex flex-col items-center gap-3">
-    <Image
-  src="/icons/laravelIcon.png"
-  alt="Laravel"
-  width={32}
-  height={32}
-  className="opacity-100"
-/>
-    <p className="font-medium">Laravel</p>
-  </CardContent>
-</Card>
-
-<Card className="bg-zinc-900 border-zinc-700 text-center">
-  <CardContent className="flex flex-col items-center gap-3">
-    <Layers className="h-8 w-8 text-gray-300" />
-    <p className="font-medium">Next.js</p>
-  </CardContent>
-</Card>
-
-<Card className="bg-zinc-900 border-zinc-700 text-center">
-  <CardContent className="flex flex-col items-center gap-3">
-    <Database className="h-8 w-8 text-emerald-400" />
-    <p className="font-medium">MySQL</p>
-  </CardContent>
-</Card>
-
+  <div className="overflow-hidden ">
+    <div className="flex w-max gap-6 animate-marquee">
+      {[...techStack, ...techStack].map((item, i) => (
+        <Card
+          key={i}
+          className="bg-zinc-900 border-zinc-700 text-center min-w-[140px]"
+        >
+          <CardContent className="flex flex-col items-center gap-3 py-6">
+            {item.icon}
+            <p className="font-medium">{item.name}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
   </div>
 </section>
 
 
+
         {/* ===== KEAHLIAN ===== */}
-        <section
-          ref={skill.ref}
-          className={`transition-all duration-700 ${
-            skill.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h2 className="text-2xl font-semibold mb-6">Keahlian</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-zinc-900 border-zinc-700">
-              <CardContent>
-                <h3 className="font-semibold mb-2">Frontend Development</h3>
-                <p className="text-gray-400">
-                  Membuat tampilan website yang responsif, modern, dan user-friendly.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-zinc-900 border-zinc-700">
-              <CardContent>
-                <h3 className="font-semibold mb-2">Backend Dasar</h3>
-                <p className="text-gray-400">
-                  Backend Developer yang fokus pada pembuatan sistem yang efisien, aman, dan mudah dikembangkan.
-Menguasai Laravel, Supabase, manajemen database dengan HeidiSQL, serta backend logic di Next.js.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
+      <section
+        ref={skill.ref}
+        className={`transition-all duration-700 ${
+          skill.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <h2 className="text-2xl font-semibold mb-6">Keahlian</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="bg-zinc-900 border-zinc-700">
+            <CardContent>
+              <h3 className="font-semibold mb-2">Frontend Development</h3>
+              <p className="text-gray-400">
+                Mampu membangun tampilan website yang responsif dan rapi sebagai pendukung integrasi dengan sistem backend.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-zinc-900 border-zinc-700">
+            <CardContent>
+              <h3 className="font-semibold mb-2">Backend Dasar</h3>
+              <p className="text-gray-400">
+                Backend Developer yang fokus pada pembuatan sistem yang efisien, aman, dan mudah dikembangkan.
+                Menguasai Laravel, Supabase, manajemen database dengan HeidiSQL, serta backend logic di Next.js.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
         {/* ===== PROJECT ===== */}
         <section
           ref={project.ref}
@@ -182,31 +218,70 @@ Menguasai Laravel, Supabase, manajemen database dengan HeidiSQL, serta backend l
         </section>
 
         {/* ===== CONTACT ===== */}
-        <section
-          ref={contact.ref}
-          className={`transition-all duration-700 ${
-            contact.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h2 className="text-2xl font-semibold mb-6">Kontak</h2>
-          <div className="flex gap-4">
-            <Link href="https://github.com/HDFranco" target="_blank">
-              <Button size="icon" variant="outline" className="h-14 w-14">
-                <Github />
-              </Button>
-            </Link>
+<section
+  ref={contact.ref}
+  className={`transition-all duration-700 ${
+    contact.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+  }`}
+>
+  <div className="grid md:grid-cols-2 gap-6">
 
-            <Link href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfrLZgpnlscmsSZzmxlwhjJPnChDWJsbHdRSRBCSbvCmxRPRGsGFQQsCQSNgVCXthcQwkL" target="_blank">
-              <Button size="icon" variant="outline" className="h-14 w-14">
-                <Mail />
-              </Button>
-            </Link>
+    {/* CARD KONTAK */}
+    <Card>
+      <CardContent>
+        <h2 className="text-2xl font-semibold mb-4">Kontak</h2>
+
+        <div className="mb-4 text-sm text-gray-300">
+          <div className="flex gap-2 items-center mb-2">
+            <Mail className="h-4 w-4" />
+            <span>rakaadit932@gmail.com</span>
           </div>
-        </section>
+          <div className="flex gap-2 items-center mb-2">
+            <Phone className="h-4 w-4" />
+            <span>+62 895-7062-40908</span>
+          </div>
+          <div className="flex gap-2 items-center mb-2">
+            <Github className="h-4 w-4" />
+            <span>github.com/rkaa-code</span>
+          </div>
+        </div>
 
-        <footer className="text-gray-500 text-sm">
-          © 2026 Raka Aditya Putra
-        </footer>
+        <div className="flex gap-4">
+          <Link href="https://github.com/rkaa-code" target="_blank">
+            <Button size="icon" variant="outline" className="h-14 w-14">
+              <Github />
+            </Button>
+          </Link>
+
+          <Link href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWscznFBDKrhzBNNcjpWlQTtdnJFCFMhjtmmfGDrsJrGLhjdPjgMSQQPVqdCfZTkBFzLvzWmb" target="_blank">
+            <Button size="icon" variant="outline" className="h-14 w-14">
+              <Mail />
+            </Button>
+          </Link>
+        </div>
+      </CardContent>
+    </Card>
+
+    {/* CARD AVAILABILITY */}
+    <Card>
+      <CardContent>
+        <h2 className="text-2xl font-semibold mb-4">Ketersediaan</h2>
+
+        <p className="text-sm text-gray-400 leading-relaxed">
+          Terbuka untuk kesempatan magang, kerja praktik, atau kolaborasi
+          pengembangan sistem backend. Siap mengerjakan task nyata seperti
+          perbaikan bug, integrasi API, dan pengelolaan database.
+        </p>
+      </CardContent>
+    </Card>
+
+  </div>
+</section>
+
+<footer className="mt-6 text-center text-gray-500 text-sm">
+  © 2026 Raka Aditya Putra
+</footer>
+
       </section>
     </main>
   );
