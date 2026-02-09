@@ -14,7 +14,7 @@ import {
   Layers,
   Phone, 
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 /* ---------- Intersection Observer Hook ---------- */
 function useReveal() {
@@ -74,9 +74,11 @@ const techStack = [
 export default function Home() {
   const about = useReveal();
   const stack = useReveal();
-  const skill = useReveal();
+  const skill1 = useReveal();
+  const skill2 = useReveal();
   const project = useReveal();
   const contact = useReveal();
+  const judul = useReveal();
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-gray-100 px-6 py-20">
@@ -92,7 +94,7 @@ export default function Home() {
     {/* PROFILE IMAGE */}
     <div className="relative w-40 h-40 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900 mb-6">
       <Image
-        src="/profile.jpg"
+        src="/orang_ganteng.png"
         alt="Foto Profil Raka"
         fill
         className="object-cover"
@@ -167,9 +169,9 @@ export default function Home() {
 
         {/* ===== KEAHLIAN ===== */}
       <section
-        ref={skill.ref}
+        ref={judul.ref}
         className={`transition-all duration-700 ${
-          skill.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          judul.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         <h2 className="text-2xl font-semibold mb-6">Keahlian</h2>
@@ -182,6 +184,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
+
           <Card className="bg-zinc-900 border-zinc-700">
             <CardContent>
               <h3 className="font-semibold mb-2">Backend Dasar</h3>
@@ -193,6 +196,7 @@ export default function Home() {
           </Card>
         </div>
       </section>
+
         {/* ===== PROJECT ===== */}
         <section
           ref={project.ref}
@@ -206,7 +210,7 @@ export default function Home() {
               <CardContent>
                 <h3 className="font-semibold mb-2">Website Komik</h3>
                 <p className="text-gray-400 mb-4">
-                  Website Komik pribadi menggunakan Next.js & Tailwind CSS. Dikerjakan bersama Febrian (Exn4z)
+                  Website Komik pribadi menggunakan Supabase, Next.js & Tailwind CSS. Dikerjakan bersama Febrian (Exn4z)
                 </p>
                 <Link href="https://flux-ink-verse.vercel.app/" target="_blank">
                 <Button variant="secondary">Lihat</Button>
