@@ -92,15 +92,17 @@ export default function Home() {
     } flex flex-col items-center text-center`}
   >
     {/* PROFILE IMAGE */}
-    <div className="relative w-40 h-40 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900 mb-6">
+    {/* <div className="relative w-40 h-40 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900 mb-6"> */}
       <Image
         src="/orang_ganteng.png"
         alt="Foto Profil Raka"
-        fill
-        className="object-cover"
+        height={500}
+        width={500}
+        className="relative rounded-full overflow-hidden mb-6 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]
+        [-webkit-mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"
         priority
       />
-    </div>
+    {/* </div> */}
 
     {/* NAME */}
     <h1 className="text-4xl font-bold mb-6">
