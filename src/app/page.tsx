@@ -83,14 +83,16 @@ export default function Home() {
   const judul = useReveal();
   return (
     <>
+    <div className="bg-black h-[100px]">
       <Aurora
-        colorStops={["#5227FF", "#7cff67", "#5227FF"]}
-        amplitude={1}
+        colorStops={["#5227FF", "#7cff67", "#FF0055"]}
+        amplitude={1.5}
         blend={0.5}
-        className="fixed inset-0 z-0 pointer-events-none"
+        speed={1.0}
       />
-      <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-gray-100 px-6 py-20">
+      </div>
 
+      <main className="relative min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-gray-100 px-6 py-20">
         <section className="max-w-5xl mx-auto space-y-28">
 
   {/* ===== ABOUT ===== */}
