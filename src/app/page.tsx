@@ -1,5 +1,6 @@
 "use client";
 
+import ShinyText from "@/components/ShinyText";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
@@ -94,7 +95,6 @@ export default function Home() {
 
       <main className="relative min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-gray-100 px-6 py-20">
         <section className="max-w-5xl mx-auto space-y-28">
-
   {/* ===== ABOUT ===== */}
         <section
           ref={about.ref}
@@ -121,7 +121,18 @@ export default function Home() {
           />
 
           <h1 className="text-4xl font-bold mb-6">
-            Halo, saya Raka Aditya Putra
+            <ShinyText
+              text="Halo, Nama Saya Raka Aditya Putra"
+              speed={1}
+              delay={0}
+              color="#8d8d8d"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+            />
           </h1>
 
             {/* ABOUT ME CARD */}
@@ -132,10 +143,10 @@ export default function Home() {
                 <h2 className="text-xl font-semibold">About Me</h2>
 
                 <p className="text-gray-400 leading-relaxed">
-                  Nama saya Raka Aditya Putra, saya siswa SMK kelas 2 yang sedang fokus
-                  mendalami Backend Web Development. Saya tertarik membangun sistem
-                  backend yang menjadi dasar sebuah aplikasi agar berjalan stabil,
-                  rapi, dan mudah dikembangkan.
+                    Nama saya Raka Aditya Putra, saya siswa SMK kelas 2 yang sedang fokus
+                    mendalami Backend Web Development. Saya tertarik membangun sistem
+                    backend yang menjadi dasar sebuah aplikasi agar berjalan stabil,
+                    rapi, dan mudah dikembangkan.
                 </p>
 
                 <p className="text-gray-400 leading-relaxed">
