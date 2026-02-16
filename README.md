@@ -7,27 +7,3 @@ Website portfolio pribadi yang dibuat menggunakan Next.js untuk menampilkan proj
 
 ---
 
-## 🛠️ Tech Stack
-
-- Next.js 14
-- React
-- Tailwind CSS
-- TypeScript
-- Shadcn UI
-- React Hot Toast
-
----
-
-## ✨ Features
-
-- Responsive Design
-- Modern UI
-- Project Showcase
-- Contact Form
-- Smooth Animations
-- Toast Notification
-
----
-
-## 📁 Folder Structure
-
