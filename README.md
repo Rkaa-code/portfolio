@@ -3,7 +3,7 @@
 Website portfolio pribadi yang dibuat menggunakan Next.js untuk menampilkan project, skill, dan informasi kontak.
 
 ## 🌐 Live Demo
-🔗 https://your-portfolio-link.com
+🔗 https://portfolio-seven-teal-48.vercel.app/
 
 ---
 
